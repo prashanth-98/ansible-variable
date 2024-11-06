@@ -1,0 +1,17 @@
+---
+- name: this is my all 
+  hosts: all
+  tasks:
+    - name: this is my variable1
+      command: hostname -i
+      register: myip
+
+    - name: this is my debug task2
+      debug: msg="{{myip.stdout_lines[0]}}"
+
+    - name: this is my variable task3
+      set_fact: myprivateip="{{myip.stdout_lines}}"
+
+    - name: this is my echo variable 
+      command: echo "this is my privateip {{myprivateip}}"
+
