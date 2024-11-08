@@ -1,0 +1,21 @@
+---
+- name: working with special cases
+  hosts: all
+  tasks:
+    - name: executing my technospreds.py script
+      script: ./technospreds.py
+      ignore_errors: true
+
+    - name: printing my required output
+      command: echo "this is technospreds devops class room training"
+    
+    - name: working on specialcases delegate_to option
+      command: hostname -i
+      delegate_to: server2
+
+    - name: working on specialcases delegate_to option
+      command: uname -a
+
+
+
+    
