@@ -1,0 +1,36 @@
+---
+- name: working with my ansible loop
+  hosts: server1
+  tasks:
+    - name: this is understanding of with_items loop
+      command: echo "here is your looped value {{item}}"
+      with_items:
+        - prashanth
+        - abhishek
+        - hema
+        - kenchi
+        - amrutha
+
+    - name: this is understanding with with_fileglob loop
+      command: echo "here is your looped value {{ item }}"
+      with_fileglob: "/tmp/*"
+
+    - name: this is understanding of with_lines
+      command: echo "here is your looped line is {{ item }}"
+      with_lines: 
+        - "cat -n /etc/passwd"
+
+    - name: this is understanding of directory
+      command: echo "here is your key {{item.key}}, here is your value {{item.value}}"
+      with_dict: "{{ansible_default_ipv4}}"
+
+    - name: this is understanding of with_sequence loop
+      command: echo "here is your sequence value {{item}}"
+      with_sequence: start=1 end=10
+
+
+
+
+
+
+
