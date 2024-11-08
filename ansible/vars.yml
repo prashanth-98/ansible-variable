@@ -1,11 +1,7 @@
 ---
-- name: this is my server deatils
+- name: this is my all server description
   hosts: all
   vars:
-    - myvars1: 10
-    - myvars2: 20
-    - myvars3: 30
-
-  tasks:
-    - name: this is my variable value
-      command: echo "this is my vars value {{myvars1}},{{myvars2}},{{myvars3}}"
+    - subject: devops
+    - name: this is my task1
+      command: echo "this is my subject {{subject}}"
