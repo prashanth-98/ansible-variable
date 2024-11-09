@@ -12,7 +12,7 @@
         - amrutha
 
     - name: this is understanding with with_fileglob loop
-      command: echo "here is your looped value {{ item }}"
+      command: echo "here is your files name {{ item }}"
       with_fileglob: "/tmp/*"
 
     - name: this is understanding of with_lines
