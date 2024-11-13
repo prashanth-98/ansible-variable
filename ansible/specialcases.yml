@@ -3,7 +3,7 @@
   hosts: all
   serial: 3
   vars_files:
-    - credential1.yml
+    - dbcrdential.yml
   tasks:
     - name: executing my technospreds.py script
       script: ./technospreds.py
@@ -20,9 +20,7 @@
       command: uname -a
 
     - name: working on specialcase ansible-valut
-      command: echo "here is your database credential this is username {{dbusername}} and this is my database password {{dbpassword}} here is your databse used {{dbname}}"
-
-
+      command: echo "here is your database credential this is username {{dbusername}} and this is my database password {{dbpassword}} here is your databse used {{dbusername}} here is your databased used {{dbname}}"
 
 
     

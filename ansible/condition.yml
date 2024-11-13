@@ -2,28 +2,33 @@
 - name: working with condition and operator concept
   hosts: all
   vars:
-    - var1: 9
+  - var1: 9
   tasks: 
     - name: understanding of == operator
       command: echo "hi i am from == operator"
       when: ansible_os_family == "RedHat"
+      tags: t1
 
     - name: understanding of OR operators
       command: echo "hi i am from OR operators"
       when: ansible_os_family == "RedHat" or ansible_distribution == "amazon"
+      tags: t2
 
     - name: understanding of and operators
       command: echo "hi i am from AND operators"
       when: ansible_os_family == "RedHat" and ansible_distribution == "Amazon"
+      tags: t3
 
 
     - name: understanding of > operators
       command: echo "here is your variable value is {{var1}}"
       when: var1 <= 10
+      tags: t4
 
     - name: this is my defined variable
       command: echo "this is my defined variable is {{subject}}"
       when: subject is defined
+      tags: t5
  
 
 
